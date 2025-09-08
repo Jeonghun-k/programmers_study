@@ -1,0 +1,16 @@
+class Solution {
+    public int solution(int n) {
+        int total = 0;
+        
+        if(n % 7 == 0){
+            total =  n/7;
+        }else{
+            total = n/7 + 1;    
+            // 나는 기존에 + 7을 해서 7조각을 추가를 했었다.
+            // 하지만 피자가 몇판이 필요한지이기 떄문에 7조각 추가가아닌
+            // 피자 1판 추가의 의미인 +1을 해야지 답이다
+        }
+        
+        return total;
+    }
+}
