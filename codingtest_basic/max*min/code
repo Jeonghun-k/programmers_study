@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int[] numbers) {
+        /*
+        알고리즘
+        1. 첫 숫자를 담을 변수 만들고 담기
+        2. 담은 변수와 다음 변수를 비교, 다음 변수가 크다면 변수값 갱신
+        3. 2번을 배열 길이만큼 반복한다
+        4. 그 반복을 한번 더 하는데 이때 최고값과 비교하여 그것보다 작은것들중에 하나를 선택하도록한다
+        */
+        
+        // Integer.MIN_VALUE = int형이 가질 수 있는 최솟값을 의미
+        int max_num = Integer.MIN_VALUE; // 최고값
+        int next_num = Integer.MIN_VALUE; // 그다음 최고값
+        
+        for(int x : numbers){
+            // 최곳값 찾기
+            if(x > max_num){
+                next_num = max_num;     // x값이 기존의 max보다 크면 기존 max값을 next에                                            
+                                          저장시켜 next값으로 설정한다
+                max_num = x;        
+            } else if(x > next_num){    // next_num 갱신 구문
+                next_num = x;
+            }
+              // x값이 기존의 next값보다 크면 next값 갱신, 작다면 else if문 탈출
+        }
+        
+        
+        return max_num * next_num;
+    }
+}
