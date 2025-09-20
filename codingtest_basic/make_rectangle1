@@ -1,0 +1,19 @@
+import java.util.Arrays;
+
+// 삼각형을 만들 때 제일 긴 변이 나머지 두 변의 합보다 작아야 만들어진다
+// 배열 안에 변 3개의 길이를 입력하고 삼각형이 만들어지면 1, 만들어지지 않으면 2출력하라
+
+public class Solution{
+    public int solution(int[] sides){
+        // 배열을 오름차순으로 정렬
+        Arrays.sort(sides);
+
+        // 오름차순으로 정렬된 배열에서 
+        // 제일 큰 수가 나머지 두수의 합보다 작을 경우
+        if(sides[2] < sides[0] + sides[1]){
+            return 1;    // 1출력
+        } else{
+            return 2;    // 합이 작을 경우 2출력
+        }
+    }
+}
