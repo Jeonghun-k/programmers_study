@@ -1,0 +1,13 @@
+class Solution {
+    public int[] solution(int[] numbers, int num1, int num2) {
+        // 새로운 배열 생성
+        // 길이는 num2-num1 +1 만틈의 사이즈로 지정
+        int[] arr1 = new int[(num2-num1) + 1];
+
+        // arr1[i]가 되면 i가 num1번호의 인덱스 부터 담기기 떄문에 arr1에 적용 할 j변수를 새로 생성
+        for(int i = num1, j = 0; i <= num2; i++, j++){
+            arr1[j] = numbers[i];
+        }
+        return arr1;
+    }
+}
